@@ -1,24 +1,24 @@
-'''
-Created on Jul 24, 2014
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
-@author: pygeek
 '''
+@author Harrison Feng <feng.harrison@gmail.com>
+'''
+
 import timeit
 
 
 def create_string():
-    return 'abc' * 10
+    return 'fuck' * 10
 
 def concatenate_str():
-    return ''.join(['abc' for _ in xrange(10)])
+    return ''.join(['fuck' for _ in xrange(10)])
 
 def plus_str():
     s = ''
     for _ in xrange(10):
-        s += 'abc'
+        s += 'fuck'
     return s
-                
-# print(create_string(), concatenate_str(), plus_str())
 
 if __name__ == '__main__':
     t1 = timeit.Timer("create_string()", "from __main__ import create_string")

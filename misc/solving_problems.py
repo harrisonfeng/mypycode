@@ -1,13 +1,21 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 '''
 This module is a collection of solutions on a variety of problems.
 These problem may be small, tiny or naive, but need to some tricks 
-to solve them, 
+to solve them.
+
+@author Harrison Feng <feng.harrison@gmail.com>
 '''
+
 # Write a function that determines if a string 
 # starts with an upper-case letter A-Z
+
 def is_captialize(s):
     if s:
         return ord(s[0]) in range(ord('A'), ord('Z') + 1, 1)
+
 
 def reverse_int(n):
     sn = str(n)
@@ -17,6 +25,7 @@ def reverse_int(n):
     if s.endswith('-'):
         s = '-' + s.rstrip('-')
     return int(s) 
+
 
 def cartesian_prod(s, t):
     '''
@@ -30,6 +39,7 @@ def cartesian_prod(s, t):
     import itertools
     return (itertools.product(*((s, x) for x in t)))
 
+
 def reverse_word(s):
     '''
     input: "the       blue   sky"
@@ -38,6 +48,7 @@ def reverse_word(s):
     if(len(s) <= 0):
         raise ValueError("invalid argument")
     return ' '.join((w[::-1].capitalize() for w in s.split()))
+
 
 def rm_duplicates(seq, key=None):
     '''
@@ -52,6 +63,7 @@ def rm_duplicates(seq, key=None):
             yield e
             unique_seqs.add(val)
 
+
 def rm_duplicates_unodered(lst):
     '''
     '''
@@ -64,15 +76,16 @@ def rm_duplicates_unodered(lst):
             else:
                 last = lst[i]
 
+
 # Convert a string in which all characters are digits to integer
 # 1. sign '+', '-'
 # 2. 000
 # 3. Exceptional case, '090' will be converted to 90
 def atoi(s):
     ''' Convert a string to integer
-    
+
     Convert a string in which all characters are digits to integer.
-    
+
     Args:
         s: the string in which all characters are digits
     Return:
@@ -88,13 +101,15 @@ def atoi(s):
     if not s.isdigit():
         raise ValueError('Invalid chars included')
     L = len(s)
-    for i, e in enumerate(s, 1):                                                                                                                   
+    for i, e in enumerate(s, 1):
         k += (ord(e) - ord('0')) * 10 ** (L - i)
     if flag == '-':
         k = 0 - k 
     return k
 
+
 # Convert letters to upper or lower case contained in a string 
+
 
 def main():
     print(reverse_int(-12))
@@ -102,6 +117,7 @@ def main():
     print(reverse_int(1001))
     print(reverse_int(-2346))
     print(atoi('0'))
-    
+
+
 if __name__ == "__main__":
     main()
