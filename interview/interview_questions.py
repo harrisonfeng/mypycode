@@ -8,10 +8,10 @@
 # This solution is naive approach. It suppose that elements of list are hashable 
 def rm_duplicates(lst):
     '''Remove duplicates from a list
-    
+
     >>> rm_duplicates(['a', 'b', 'b', 'c', 'd', 'a'])
     ['a', 'b', 'c', 'd']
-    
+
     Args:
         lst: a list with hashable elements
     Return:
@@ -31,11 +31,11 @@ def rm_duplicates(lst):
 # This solution is solid solution for sequence.
 def remove_duplicates(seq, key=None):
     ''' Remove duplicate items from given sequence
-    
+
     >>> d = [{'a': 3}, {'b': 4}, {'a': 3}, {'c': 5}, {'d': 5}, {'c': 5}] 
     >>> list(remove_duplicates(d, key=lambda item: tuple(item.values()))) # python 3
     [{'a': 3}, {'b': 4}, {'c': 5}]
-     
+
     Args:
         seq: a sequence
         key: a function to get the value of items
