@@ -33,7 +33,7 @@ def reverse_int(n):
         s += sn[i]
     if s.endswith('-'):
         s = '-' + s.rstrip('-')
-    return int(s) 
+    return int(s)
 
 
 def main():
@@ -43,4 +43,4 @@ def main():
     print(reverse_int(92233720368547758079))
 
 if __name__ == '__main__':
-    main()    
+    main()

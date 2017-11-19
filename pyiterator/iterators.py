@@ -56,3 +56,23 @@ class CustRange(object):
         self.cur += 1
 
         return item
+
+
+# The class below define a __iter__ method to delegate iteration to
+# the internal held container
+
+class Node(object):
+
+    def __init__(self, value):
+        self.value = value
+        self._children_nodes = list()
+
+    def add_child(self, node):
+        if node not in self._children_nodes:
+            self._children_nodes.append(node)
+
+    def __iter__(self):
+        return iter(self._children_nodes)
+
+    def __repr__(self):
+        return "Node({!r})".format(self.value)

@@ -38,9 +38,9 @@ correct value is out of the range of representable values, INT_MAX (2147483647)
 # 3. Exceptional case, '090' will be converted to 90
 def atoi(s):
     ''' Convert a string to integer
-    
+
     Convert a string in which all characters are digits to integer.
-    
+
     Args:
         s: the string in which all characters are digits
     Return:
@@ -56,7 +56,7 @@ def atoi(s):
     if not s.isdigit():
         raise ValueError('Invalid chars included')
     L = len(s)
-    for i, e in enumerate(s, 1):                                                                                                                   
+    for i, e in enumerate(s, 1):
         k += (ord(e) - ord('0')) * 10 ** (L - i)
     if flag == '-':
         k = 0 - k 
